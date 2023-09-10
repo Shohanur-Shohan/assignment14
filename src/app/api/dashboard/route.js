@@ -1,7 +1,6 @@
 
 import { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
-import {headers} from "next/headers"
 import { VerifyToken } from "@/app/utility/JwtHelper";
 import nodemailer from "nodemailer"
 
@@ -14,7 +13,6 @@ export async function GET(req, res){
         const verify = await VerifyToken(result)
 
         const mail = verify['email'];
-        console.log(mail)
 
     //nodemailer.verify
 
