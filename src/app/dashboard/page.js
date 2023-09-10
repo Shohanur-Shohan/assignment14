@@ -20,9 +20,10 @@ export default function Dashboard() {
   const ShowData = async () =>{
     const res = await fetch('/api/dashboard');
     const result = await res.json();
-    // console.log(result['verify']['email'])
+    console.log(result);
+    console.log(result['verify']['email'])
     const email = result['verify']['email'];
-    // console.log(email)
+    console.log(email)
     setEmail(email);
     alert("email set successfully")
     
