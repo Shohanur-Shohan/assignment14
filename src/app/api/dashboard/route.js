@@ -9,8 +9,8 @@ export async function GET(req, res){
 
 
         const reqToken = await req.cookies.get('token')
-        const result = reqToken['value']
-        const verify = await VerifyToken(result)
+        // const result = reqToken['value']
+        const verify = await VerifyToken(reqToken['value'])
 
         const mail = verify['email'];
 
