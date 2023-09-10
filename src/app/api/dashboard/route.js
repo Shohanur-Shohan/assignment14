@@ -1,5 +1,4 @@
 
-import { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 import { VerifyToken } from "@/app/utility/JwtHelper";
 import nodemailer from "nodemailer"
@@ -10,13 +9,12 @@ export async function GET(req, res){
 
         const reqToken = await req.cookies.get('token')
         // const result = reqToken['value']
-        const verify = await VerifyToken(reqToken['value'])
+        const verify =  VerifyToken(reqToken['value'])
 
         const mail = verify['email'];
 
     //nodemailer.verify
 
-    // const ToEmail = searchParams.get('email');
     const ToEmail = mail;
     //Transporter
     const Transporter = nodemailer.createTransport({
